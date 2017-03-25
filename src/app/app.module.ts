@@ -1,20 +1,26 @@
+import { BlogComponent } from './post/blog.component';
+import { PostService } from './post/post.service';
+import { BlogService } from './post/blog.service';
+import { CoreModule } from './core/core.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { NgModule, ErrorHandler as NgErrorHandler, Injector, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    ReactiveFormsModule,
+    HttpModule,
+    CoreModule
   ],
-  providers: [],
+  declarations: [
+    AppComponent, BlogComponent
+  ],
+  providers: [BlogService, PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

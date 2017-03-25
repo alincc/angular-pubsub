@@ -1,13 +1,9 @@
-Testing publish-subscribe in angular 2+ with typescript, using a custom @Inject to resolve dependencies.
+import { Subscriber, Message, Inject, ListenTo } from './../core';
 
-TODO: dependencies provided in constructor do not work.
+import { BlogService } from './blog.service';
+import { Component, Injector } from '@angular/core';
 
-List of decorators:
-@Subscriber - class decorator
-@ListenTo(class) - method decorator
-@Inject(class) - property decorator
 
-```
 @Component({
     selector: 'app-blog',
     template: `
@@ -54,9 +50,3 @@ export class BlogComponent {
         console.log("SAVE_COMPLETE received, with payload", payload);
     }
 }
-```
-
-
-## Demo
-
-Run `ng serve` to start dev server, then navigate to `http://localhost:4200/`.
