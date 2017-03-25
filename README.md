@@ -2,12 +2,12 @@ Testing publish-subscribe in angular 2+ with typescript, using a custom @Inject 
 
 TODO: dependencies provided in constructor do not work.
 
-List of decorators:
-@Subscriber - class decorator
-@ListenTo(class) - method decorator
-@Inject(class) - property decorator
+### List of decorators
+ - @Subscriber - class decorator
+ - @ListenTo(class) - method decorator
+ - @Inject(class) - property decorator
 
-```
+```js
 @Component({
     selector: 'app-blog',
     template: `
